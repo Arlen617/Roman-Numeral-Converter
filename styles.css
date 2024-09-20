@@ -90,4 +90,5 @@ button:active {
   border-radius: 20px;
   box-shadow: var(--box-shawdow);
   padding: 2%;
+  font-size: 1.5rem;
 }
