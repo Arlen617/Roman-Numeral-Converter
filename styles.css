@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* COLORS */
+  --text: #0b0808;
+  --background: #c4b1ab;
+  --primary: #e9fd7a;
+  --secondary: #8ca2b2;
+  /* EFFECTS */
+  --box-shawdow: 0px 1px;
+}
+
+body {
+  align-items: center;
+  background-color: var(--background);
+  border-radius: 20px;
+  color: #0b0808;
+  display: flex;
+  flex-flow: column wrap;
+  font-family: "Quattrocento", serif;
+  gap: 20%;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto 0 auto;
+  max-width: 320px;
+  width: 100%;
+}
+
+header {
+  background-color: var(--primary);
+  border-radius: 50px;
+  box-shadow: var(--box-shawdow);
+  font-weight: bolder;
+  text-align: center;
+  width: 95%;
+}
+
+.input-container {
+  align-items: center;
+  background-color: #e9fd7a;
+  border-radius: 50px;
+  box-shadow: var(--box-shawdow);
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  height: 15%;
+  justify-content: center;
+  width: 100%;
+  width: 95%;
+}
+
+input,
+button {
+  background-color: var(--secondary);
+  border-radius: 20px;
+  color: var(--text);
+  display: block;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+input {
+  box-shadow: var(--box-shawdow);
+  padding: 1%;
+  width: 90%;
+}
+
+button {
+  box-shadow: var(--box-shawdow);
+  width: 30%;
+}
+
+button:hover,
+button:focus {
+  transform: scale(1.1);
+}
+
+button:active {
+    box-shadow: none;
+}
+
+#output {
+  background-color: #e9fd7a;
+  border-radius: 20px;
+  box-shadow: var(--box-shawdow);
+  padding: 2%;
+}

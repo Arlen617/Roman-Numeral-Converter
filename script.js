@@ -28,7 +28,6 @@ function convertToRoman(input) {
   }
   return resultNumerals;
 }
-
 function showOutput() {
   if (inputBox.value === "") {
     outputBox.innerText = "Please enter a valid number";
@@ -37,18 +36,18 @@ function showOutput() {
   } else if (inputBox.value >= 4000) {
     outputBox.innerText = "Please enter a number less than or equal to 3999";
   } else {
-    let numberal = convertToRoman(inputBox.value)
-    outputBox.innerText = numberal
-
+    let numberal = convertToRoman(inputBox.value);
+    outputBox.innerText = numberal;
   }
 }
+
 inputBox.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     showOutput();
-    inputBox.value = ""
+    inputBox.value = "";
   }
 });
 converBtn.addEventListener("click", () => {
   showOutput();
-  inputBox.value = ""
+  inputBox.value = "";
 });
