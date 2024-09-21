@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap");
+@font-face {
+  font-family: "Stick Light";
+  src: url(fonts/JGJ\ Roman\ Rustic\ Regular.ttf);
+}
 
 * {
   box-sizing: border-box;
@@ -9,48 +12,54 @@
 :root {
   /* COLORS */
   --text: #0b0808;
-  --background: #c4b1ab;
-  --primary: #e9fd7a;
   --secondary: #8ca2b2;
   /* EFFECTS */
-  --box-shawdow: 0px 1px;
+  --box-shawdow: 0px 1px black;
 }
 
-body {
+html {
+  background-image: url(images/brick\ wall.jpg);
+  background-size: cover;
+}
+
+.screen {
   align-items: center;
-  background-color: var(--background);
   border-radius: 20px;
   color: #0b0808;
   display: flex;
-  flex-flow: column wrap;
-  font-family: "Quattrocento", serif;
-  gap: 20%;
+  flex-flow: column;
+  font-family: "Stick Light", serif;
+  gap: 10%;
   height: 100vh;
   justify-content: center;
   margin: 0 auto 0 auto;
-  max-width: 320px;
+  max-width: 500px;
   width: 100%;
 }
 
 header {
-  background-color: var(--primary);
-  border-radius: 50px;
+  background-color: #988871;
+  border-radius: 15px;
+  border: 20px solid #857660;
   box-shadow: var(--box-shawdow);
   font-weight: bolder;
+  padding: 5%;
   text-align: center;
   width: 95%;
 }
 
 .input-container {
   align-items: center;
-  background-color: #e9fd7a;
-  border-radius: 50px;
+  background-color: #988871;
+  border-radius: 15px;
+  border: 20px solid #857660;
   box-shadow: var(--box-shawdow);
   display: flex;
   flex-direction: column;
   gap: 5%;
   height: 15%;
   justify-content: center;
+  padding: 5%;
   width: 100%;
   width: 95%;
 }
@@ -58,22 +67,26 @@ header {
 input,
 button {
   background-color: var(--secondary);
-  border-radius: 20px;
+  border-radius: 15px;
   color: var(--text);
   display: block;
   font-family: inherit;
-  font-weight: bold;
+  border: none;
 }
 
 input {
   box-shadow: var(--box-shawdow);
   padding: 1%;
   width: 90%;
+  margin-bottom: 1%;
+  font-size: 1.25rem;
 }
 
 button {
   box-shadow: var(--box-shawdow);
-  width: 30%;
+  width: 35%;
+  padding: 1%;
+  text-align: center;
 }
 
 button:hover,
@@ -82,13 +95,25 @@ button:focus {
 }
 
 button:active {
-    box-shadow: none;
+  box-shadow: none;
+}
+
+.output-container {
+  align-items: center;
+  background-color: #988871;
+  border-radius: 15px;
+  border: 20px solid #857660;
+  display: flex;
+  height: 25%;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
 }
 
 #output {
-  background-color: #e9fd7a;
-  border-radius: 20px;
-  box-shadow: var(--box-shawdow);
   padding: 2%;
   font-size: 1.5rem;
+  vertical-align: center;
+  color: #100c07;
+  text-wrap: wrap;
 }
