@@ -36,8 +36,7 @@ function showOutput() {
   } else if (inputBox.value >= 4000) {
     outputBox.innerText = "Please enter a number less than or equal to 3999";
   } else {
-    let numeral = convertToRoman(inputBox.value);
-    outputBox.innerText = numeral;
+    outputBox.innerText = convertToRoman(inputBox.value);
   }
 }
 

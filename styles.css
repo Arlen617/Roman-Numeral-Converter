@@ -11,7 +11,9 @@
 
 :root {
   /* COLORS */
-  --text: #0b0808;
+  --text: #100c07;
+  --light-brown: #988871;
+  --dark-brown: #857660;
   --secondary: #8ca2b2;
   /* EFFECTS */
   --box-shawdow: 0px 1px black;
@@ -25,7 +27,7 @@ html {
 .screen {
   align-items: center;
   border-radius: 20px;
-  color: #0b0808;
+  color: var(--text);
   display: flex;
   flex-flow: column;
   font-family: "Stick Light", serif;
@@ -38,40 +40,39 @@ html {
 }
 
 header {
-  background-color: #988871;
+  background-color: var(--light-brown);
   border-radius: 15px;
-  border: 20px solid #857660;
+  border: 20px solid var(--dark-brown);
   box-shadow: var(--box-shawdow);
   font-weight: bolder;
   padding: 5%;
   text-align: center;
-  width: 95%;
+  width: 100%;
 }
 
 .input-container {
   align-items: center;
-  background-color: #988871;
+  background-color: var(--light-brown);
   border-radius: 15px;
-  border: 20px solid #857660;
+  border: 20px solid var(--dark-brown);
   box-shadow: var(--box-shawdow);
   display: flex;
   flex-direction: column;
   gap: 5%;
-  height: 15%;
+  height: 20%;
   justify-content: center;
   padding: 5%;
   width: 100%;
-  width: 95%;
 }
 
 input,
 button {
   background-color: var(--secondary);
-  border-radius: 15px;
+  border-radius: 10px;
+  border: none;
   color: var(--text);
   display: block;
   font-family: inherit;
-  border: none;
 }
 
 input {
@@ -84,9 +85,9 @@ input {
 
 button {
   box-shadow: var(--box-shawdow);
-  width: 35%;
   padding: 1%;
   text-align: center;
+  width: 35%;
 }
 
 button:hover,
@@ -100,20 +101,20 @@ button:active {
 
 .output-container {
   align-items: center;
-  background-color: #988871;
+  background-color: var(--light-brown);
   border-radius: 15px;
-  border: 20px solid #857660;
+  border: 20px solid var(--dark-brown);
   display: flex;
   height: 25%;
   justify-content: center;
-  width: 100%;
   padding: 5%;
+  width: 100%;
 }
 
 #output {
-  padding: 2%;
+  color: var(--text);
   font-size: 1.5rem;
-  vertical-align: center;
-  color: #100c07;
+  padding: 2%;
   text-wrap: wrap;
+  vertical-align: center;
 }
