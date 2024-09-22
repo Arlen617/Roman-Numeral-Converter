@@ -1,43 +1,47 @@
 const inputBox = document.getElementById("number");
-const converBtn = document.getElementById("convert-btn");
+const convertBtn = document.getElementById("convert-btn");
 const outputBox = document.getElementById("output");
-// rn stands for romand numerals and an stands for Arabic numerals
 const romanArr = [
-  { rn: "M", an: 1000 },
-  { rn: "CM", an: 900 },
-  { rn: "D", an: 500 },
-  { rn: "CD", an: 400 },
-  { rn: "C", an: 100 },
-  { rn: "XC", an: 90 },
-  { rn: "L", an: 50 },
-  { rn: "XL", an: 40 },
-  { rn: "X", an: 10 },
-  { rn: "IX", an: 9 },
-  { rn: "V", an: 5 },
-  { rn: "IV", an: 4 },
-  { rn: "I", an: 1 },
+  { roman: "M", arabic: 1000 },
+  { roman: "CM", arabic: 900 },
+  { roman: "D", arabic: 500 },
+  { roman: "CD", arabic: 400 },
+  { roman: "C", arabic: 100 },
+  { roman: "XC", arabic: 90 },
+  { roman: "L", arabic: 50 },
+  { roman: "XL", arabic: 40 },
+  { roman: "X", arabic: 10 },
+  { roman: "IX", arabic: 9 },
+  { roman: "V", arabic: 5 },
+  { roman: "IV", arabic: 4 },
+  { roman: "I", arabic: 1 },
 ];
 
 function convertToRoman(input) {
   let resultNumerals = "";
-  for (const x of romanArr) {
-    while (input >= x.an) {
-      resultNumerals += x.rn;
-      input -= x.an;
+  for (const { roman, arabic } of romanArr) {
+    while (input >= arabic) {
+      resultNumerals += roman;
+      input -= arabic;
     }
   }
   return resultNumerals;
 }
-function showOutput() {
-  if (inputBox.value === "") {
-    outputBox.innerText = "Please enter a valid number";
-  } else if (inputBox.value < 1) {
-    outputBox.innerText = "Please enter a number greater than or equal to 1";
-  } else if (inputBox.value >= 4000) {
-    outputBox.innerText = "Please enter a number less than or equal to 3999";
-  } else {
-    outputBox.innerText = convertToRoman(inputBox.value);
+
+function showError(value) {
+  if (value === "") {
+    return "Please enter a valid number";
+  } else if (value < 1) {
+    return "Please enter a number greater than or equal to 1";
+  } else if (value >= 4000) {
+    return "Please enter a number less than or equal to 3999";
   }
+}
+
+
+function showOutput() {
+  outputBox.innerText = showError(inputBox.value) ? showError(inputBox.value) : convertToRoman(inputBox.value)
+ 
 }
 
 inputBox.addEventListener("keydown", (e) => {
@@ -46,7 +50,7 @@ inputBox.addEventListener("keydown", (e) => {
     inputBox.value = "";
   }
 });
-converBtn.addEventListener("click", () => {
+convertBtn.addEventListener("click", () => {
   showOutput();
   inputBox.value = "";
 });
