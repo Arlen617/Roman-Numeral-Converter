@@ -39,14 +39,34 @@ function showError(value) {
 
 function showOutput() {
   let parsed = parseInt(inputBox.value);
-  outputBox.innerText = showError(parsed)
-    ? showError(parsed)
+  outputBox.innerText = showError(inputBox.value)
+    ? showError(inputBox.value)
     : convertToRoman(parsed);
 }
 
+function reset() {
+  if (document.getElementById("reset") === null) {
+    const clear = document.createElement("button");
+    clear.id = "reset";
+    clear.innerText = "CLEAR";
+    document.getElementById("output-container").append(clear);
+    document.getElementById("reset").addEventListener("click", () => {
+      outputBox.innerText = ""
+      inputBox.value = ""
+      clear.remove()
+    })
+  }
+}
+
+
+
+
+
 inputBox.addEventListener("change", (e) => {
   showOutput();
+  reset();
 });
 convertBtn.addEventListener("click", () => {
   showOutput();
+  reset();
 });

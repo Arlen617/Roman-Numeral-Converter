@@ -107,6 +107,7 @@ button:active {
   display: flex;
   height: 25%;
   justify-content: center;
+  flex-direction: column;
   padding: 5%;
   width: 100%;
 }
