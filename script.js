@@ -1,6 +1,8 @@
 const inputBox = document.getElementById("number");
 const convertBtn = document.getElementById("convert-btn");
 const outputBox = document.getElementById("output");
+const resetBtn = document.getElementById("reset");
+
 const romanArr = [
   { roman: "M", arabic: 1000 },
   { roman: "CM", arabic: 900 },
@@ -44,25 +46,21 @@ function showOutput() {
     : convertToRoman(parsed);
 }
 
-function reset() {
-  if (document.getElementById("reset") === null) {
-    const clear = document.createElement("button");
-    clear.id = "reset";
-    clear.innerText = "CLEAR";
-    document.getElementById("output-container").append(clear);
-    document.getElementById("reset").addEventListener("click", () => {
-      outputBox.innerText = "";
-      inputBox.value = "";
-      clear.remove();
-    });
-  }
+function showReset() {
+  resetBtn.classList.remove("hidden");
 }
+
+resetBtn.addEventListener("click", () => {
+  inputBox.value = "";
+  outputBox.innerText = "";
+  resetBtn.className = "hidden"
+})
 
 inputBox.addEventListener("change", (e) => {
   showOutput();
-  reset();
+  showReset();
 });
 convertBtn.addEventListener("click", () => {
   showOutput();
-  reset();
+  showReset();
 });

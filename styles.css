@@ -119,3 +119,7 @@ button:active {
   text-wrap: wrap;
   vertical-align: center;
 }
+
+.hidden { 
+  display: none;
+}
