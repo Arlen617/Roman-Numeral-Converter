@@ -18,14 +18,13 @@ const romanArr = [
 ];
 
 function convertToRoman(input) {
-  let resultNumerals = "";
-  for (const { roman, arabic } of romanArr) {
+  return romanArr.reduce((result, { roman, arabic }) => {
     while (input >= arabic) {
-      resultNumerals += roman;
+      result += roman;
       input -= arabic;
     }
-  }
-  return resultNumerals;
+    return result;
+  }, "");
 }
 
 function showError(value) {
@@ -38,19 +37,16 @@ function showError(value) {
   }
 }
 
-
 function showOutput() {
-  outputBox.innerText = showError(inputBox.value) ? showError(inputBox.value) : convertToRoman(inputBox.value)
- 
+  let parsed = parseInt(inputBox.value);
+  outputBox.innerText = showError(parsed)
+    ? showError(parsed)
+    : convertToRoman(parsed);
 }
 
-inputBox.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    showOutput();
-    inputBox.value = "";
-  }
+inputBox.addEventListener("change", (e) => {
+  showOutput();
 });
 convertBtn.addEventListener("click", () => {
   showOutput();
-  inputBox.value = "";
 });
