@@ -51,16 +51,12 @@ function reset() {
     clear.innerText = "CLEAR";
     document.getElementById("output-container").append(clear);
     document.getElementById("reset").addEventListener("click", () => {
-      outputBox.innerText = ""
-      inputBox.value = ""
-      clear.remove()
-    })
+      outputBox.innerText = "";
+      inputBox.value = "";
+      clear.remove();
+    });
   }
 }
-
-
-
-
 
 inputBox.addEventListener("change", (e) => {
   showOutput();
